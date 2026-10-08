@@ -75,24 +75,29 @@
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: "Poppins", sans-serif;
 
-  --color-primary: #0891b2;
-  --color-primary-dark: #0e7490;
+  /* Brand Colors */
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0284c7;
   --color-accent: #f97316;
   --color-accent-light: #fed7aa;
+
+  /* Neutrals */
   --color-background: #ffffff;
-  --color-foreground: #1f2937;
-  --color-muted: #f3f4f6;
-  --color-muted-foreground: #6b7280;
-  --color-border: #e5e7eb;
+  --color-surface: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+
+  /* Status Colors */
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
+  --color-info: #3b82f6;
 
   --radius: 0.5rem;
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -142,18 +147,18 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary-dark transition;
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition;
+    @apply bg-surface text-foreground border border-border px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-colors;
   }
 
-  .card {
-    @apply bg-white border border-border rounded-lg shadow-sm p-6;
+  .card-base {
+    @apply bg-white rounded-xl shadow-sm border border-border p-6;
   }
 
-  .input-field {
-    @apply w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary;
+  .input-base {
+    @apply w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
   }
 }

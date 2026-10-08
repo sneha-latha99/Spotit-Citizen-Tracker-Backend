@@ -1,14 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Poppins } from "next/font/google"
 import "./globals.css"
+import Header from "@/components/header"
+import ChatbotWidget from "@/components/chatbot-widget"
+import { AuthProvider } from "@/lib/auth-context"
 
-const geistSans = Geist({ subsets: ["latin"] })
-const geistMono = Geist_Mono({ subsets: ["latin"] })
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+})
 
 export const metadata: Metadata = {
   title: "SpotIt - Citizen Issue Tracker",
-  description: "See it. Spot it. Solve it.",
+  description: "Report, track, and solve civic issues in your community",
     generator: 'v0.app'
 }
 
@@ -19,7 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.className} bg-background text-foreground`}>{children}</body>
+      <body className={`${poppins.className} bg-background text-foreground`}>
+        <AuthProvider>
+          <Header />
+          <main>{children}</main>
+          <ChatbotWidget />
+        </AuthProvider>
+      </body>
     </html>
   )
 }

@@ -1,15 +1,13 @@
 import TrackForm from "@/components/track-form"
-import Header from "@/components/header"
 
 export default function TrackPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
-      <div className="max-w-2xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-2 text-foreground">Track Your Complaint</h1>
-        <p className="text-muted-foreground mb-8">Enter your complaint ID or email to check the status</p>
+    <div className="min-h-screen bg-surface py-12 px-4">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground mb-2">Track Your Issue</h1>
+        <p className="text-text-muted mb-8">Enter your complaint ID or email to track the status</p>
         <TrackForm />
       </div>
-    </main>
+    </div>
   )
 }

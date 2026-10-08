@@ -1,11 +1,11 @@
-import Header from "@/components/header"
 import AdminDashboard from "@/components/admin-dashboard"
 
 export default function AdminPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
-      <AdminDashboard />
-    </main>
+    <div className="min-h-screen bg-surface py-12 px-4">
+      <div className="max-w-7xl mx-auto">
+        <AdminDashboard />
+      </div>
+    </div>
   )
 }
