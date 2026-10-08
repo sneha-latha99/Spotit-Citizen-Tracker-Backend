@@ -85,7 +85,7 @@ A modern, full-stack civic issue tracking and management platform built with Nex
 ## Project Structure
 
 \`\`\`
-Spotit-Citizen-Tracker-Frontend/
+Spotit-Citizen-Tracker-Backend/
 ├── app/
 │   ├── api/                    # API routes
 │   ├── page.tsx                # Home page
